@@ -1,3 +1,3 @@
-echo trolo2
+echo trolo3
 
 return 0
