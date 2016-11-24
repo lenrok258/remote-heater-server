@@ -1,1 +1,1 @@
-echo TROLO!
+echo trolo2
