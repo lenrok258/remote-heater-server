@@ -1,5 +1,5 @@
-cd $(dirname $0)
-source $HOME/.profile
+CURRENT_DIR=`pwd`
+echo "+++++++++++++++++++++++++++${CURRENT_DIR}"
 
 LOG_FILE=./logs/setup_`date +%Y-%m-%d_%H:%M.log`
 
