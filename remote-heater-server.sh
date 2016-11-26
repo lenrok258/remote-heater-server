@@ -1,3 +1,3 @@
-#!//bin/bash
+#!/bin/bash
 
 node ./remote-heater-server.js
