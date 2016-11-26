@@ -7,6 +7,6 @@ function log {
 log "About to install and restart <<Remote Heater Server>>"
 
 ./install.sh 2>&1 | tee -a ${LOG_FILE}
-./remote-heater-server.sh & 2>&1 | tee -a ${LOG_FILE}
+./remote-heater-server.sh 2>&1 | tee -a ${LOG_FILE}
 
 return 0
