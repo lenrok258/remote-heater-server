@@ -28,6 +28,6 @@ function saveCurrentValue(command) {
 
 module.exports = {
     COMMAND: COMMAND,
-    readCurrent: readCurrent,
-    setCommand: setCommand
+    readCurrentValue: readCurrentValue,
+    saveCurrentValue: saveCurrentValue
 }
