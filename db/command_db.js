@@ -15,16 +15,12 @@ function openDb() {
     return JSON.parse(dbContent);
 }
 
-function closeAndPersist(db) {
-    fs.writeFileSync(DB_FILENAME, JSON.stringify(db), 'utf-8');
-}
-
-function readCurrent() {
+function readCurrentValue() {
     db = openDb()
     return db;
 }
 
-function setCommand(command) {
+function saveCurrentValue(command) {
     db = openDb()
     db.command = command
     fs.writeFileSync(DB_FILENAME, JSON.stringify(db), 'utf-8');

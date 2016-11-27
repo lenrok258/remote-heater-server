@@ -1,1 +1,4 @@
-{"command":"LEISURE_TIME"}
+{
+    "command": "LT",
+    "temp": 22
+}
