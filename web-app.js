@@ -1,5 +1,5 @@
 function handleRequest(req, res) {
-    res.send('Trolo, nothing to see here yet')
+    res.send('Nothing to see here')
 }
 
 module.exports = handleRequest
