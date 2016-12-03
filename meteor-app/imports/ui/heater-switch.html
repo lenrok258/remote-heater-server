@@ -1,4 +1,13 @@
 <template name="heaterSwitch">
     <h2>Sterowanie piecem</h2>
-    <label><input name="target-temp" /></label>
+    <form id="heater-switch-form" method="POST">
+        <div>Temperatura:&nbsp;<input name="target-temp" /></div>
+        <br/>
+        <!-- Rectangular switch -->
+        Piec:
+        <label class="switch">
+            <input id="heater-switch" type="checkbox" onchange="this.form.submit()">
+            <div class="slider round"></div>
+        </label>
+    </form>
 </template>
