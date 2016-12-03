@@ -1,16 +1,13 @@
 import './heater-switch.html'
 
 Template.heaterSwitch.events({
-
-    'submit #heater-switch-form' (event) {
+    'change .onoffswitch-checkbox' (even, template) {
         event.preventDefault();
 
-        // const target = event.target;
-        // const requestedTemperature = event.target['target-temp'].value
+        const heaterOn = event.target.checked
+        const requestedTemperature = template.find('input#target-temp').value
 
-
-        console.log(event)
-        alert('trolo2')
+        console.log('heater on? = ' + heaterOn)
+        console.log('requestedTemperature = ' + requestedTemperature)
     }
-
 })
