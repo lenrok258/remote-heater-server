@@ -1,9 +1,8 @@
 import './heater-switch.html'
+import '../api/heater-switch.js'
 
 Template.heaterSwitch.events({
-    'change .onoffswitch-checkbox' (even, template) {
-        event.preventDefault();
-
+    'change .onoffswitch-checkbox' (event, template) {
         const heaterOn = event.target.checked
         const requestedTemperature = template.find('input#target-temp').value
 

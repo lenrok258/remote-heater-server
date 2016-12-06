@@ -3,7 +3,7 @@ import { ReactiveVar } from 'meteor/reactive-var';
 
 import './main.html';
 import '../imports/ui/heater-switch.js'
-import '../imports/ui/heater-currents.js'
+import '../imports/ui/heater-status.js'
 
 
 
