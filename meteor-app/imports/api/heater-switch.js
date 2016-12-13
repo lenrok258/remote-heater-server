@@ -12,15 +12,17 @@ import {
 export const HeaterSwitch = new Mongo.Collection('heater-switch');
 
 if (Meteor.isServer) {
-    // This code only runs on the server
-    // Only publish tasks that are public or belong to the current user
     Meteor.publish('heater-switch', function heaterSwitch() {
+        // if not logged
+        // return this.ready()
+
         return HeaterSwitch
-            .find({})
-            .sort({
-                createdAt: -1
+            .find({}, {
+                sort: {
+                    createdAt: -1
+                },
+                limit: 1
             })
-            .limit(1)
     });
 }
 

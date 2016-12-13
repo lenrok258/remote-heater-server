@@ -1,15 +1,16 @@
 <template name="heaterSwitch">
     <h2>Sterowanie piecem</h2>
-    <div>Temperatura</div>
-    <input id="target-temp" name="target-temp" />
+    <div>Ustawiona temperatura</div>
+    <input id="target-temp" name="target-temp" value="{{currentSwitch.temperature}}"/>
     <br/>
     <br/>
     <!-- Rectangular switch -->
     <div class="onoffswitch">
-        <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch">
+        <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" checked="{{currentSwitch.enabled}}">
         <label class="onoffswitch-label" for="myonoffswitch">
                 <span class="onoffswitch-inner"></span>
                 <span class="onoffswitch-switch"></span>
             </label>
     </div>
+
 </template>

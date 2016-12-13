@@ -1,5 +1,13 @@
 import './heater-switch.html'
-import '../api/heater-switch.js'
+
+import {
+    HeaterSwitch
+} from '../api/heater-switch.js'
+
+Template.body.onCreated(function bodyOnCreated() {
+    this.state = new ReactiveDict();
+    Meteor.subscribe('heater-switch');
+});
 
 Template.heaterSwitch.events({
     'change .onoffswitch-checkbox' (event, template) {
@@ -16,6 +24,12 @@ Template.heaterSwitch.events({
         persistHeaterSwitch(heaterOn, requestedTemperature)
     }
 })
+
+Template.heaterSwitch.helpers({
+    currentSwitch() {
+        return HeaterSwitch.find({}).fetch()[0];
+    }
+});
 
 function persistHeaterSwitch(heaterOn, requestedTemperature) {
     console.log('heater on? = ' + heaterOn)
