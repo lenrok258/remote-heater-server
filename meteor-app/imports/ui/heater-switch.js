@@ -28,6 +28,10 @@ Template.heaterSwitch.events({
 Template.heaterSwitch.helpers({
     currentSwitch() {
         return HeaterSwitch.find({}).fetch()[0];
+    },
+
+    lastSwitches() {
+        return HeaterSwitch.find({}, {order: {createdAt:1}});
     }
 });
 

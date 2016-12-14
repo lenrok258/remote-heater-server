@@ -1,7 +1,7 @@
 <template name="heaterSwitch">
     <h2>Sterowanie piecem</h2>
     <div>Ustawiona temperatura</div>
-    <input id="target-temp" name="target-temp" value="{{currentSwitch.temperature}}"/>
+    <input id="target-temp" name="target-temp" value="{{currentSwitch.temperature}}" />
     <br/>
     <br/>
     <!-- Rectangular switch -->
@@ -12,5 +12,8 @@
                 <span class="onoffswitch-switch"></span>
             </label>
     </div>
-
+    <h2>Historia sterowania</h2>
+    {{#each lastSwitches}}
+        <div>{{createdAt}} | {{enabled}} | {{temperature}}</div>
+    {{/each}}
 </template>
