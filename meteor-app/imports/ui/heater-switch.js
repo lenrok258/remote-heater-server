@@ -1,8 +1,8 @@
 import './heater-switch.html'
-
 import {
     HeaterSwitch
 } from '../api/heater-switch.js'
+import 'meteor/momentjs:moment'
 
 Template.body.onCreated(function bodyOnCreated() {
     this.state = new ReactiveDict();
@@ -31,9 +31,19 @@ Template.heaterSwitch.helpers({
     },
 
     lastSwitches() {
-        return HeaterSwitch.find({}, {order: {createdAt:1}});
+        return HeaterSwitch.find({}, {
+            sort: {
+                createdAt: -1
+            },
+            limit: 20
+        });
+    },
+
+    formatDate(dateToFormat) {
+        return moment(dateToFormat).format('HH:mm:ss MM-DD-YYYY');
     }
 });
+
 
 function persistHeaterSwitch(heaterOn, requestedTemperature) {
     console.log('heater on? = ' + heaterOn)

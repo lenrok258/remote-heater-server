@@ -13,7 +13,20 @@
             </label>
     </div>
     <h2>Historia sterowania</h2>
-    {{#each lastSwitches}}
-        <div>{{createdAt}} | {{enabled}} | {{temperature}}</div>
-    {{/each}}
+    <table>
+        <tr style="background-color: #CCC;">
+            <th style="padding: 10px">Data</th>
+            <th style="padding: 10px">Włączony?</th>
+            <th style="padding: 10px">Ustawiona <br/>temperatura</th>
+            <th style="padding: 10px">Kto <br/>zmienił</th>
+        </tr>
+        {{#each lastSwitches}}
+        <tr>
+            <td align="center" style="border-bottom: solid #CCC 1px; padding-left: 5px; padding-right: 5px;">{{formatDate createdAt}}</td>
+            <td align="center" style="border-bottom: solid #CCC 1px; padding-left: 5px; padding-right: 5px; ">{{enabled}}</td>
+            <td align="center" style="border-bottom: solid #CCC 1px; padding-left: 5px; padding-right: 5px;">{{temperature}}</td>
+            <td align="center" style="border-bottom: solid #CCC 1px; padding-left: 5px; padding-right: 5px;">...</td>
+        </tr>
+        {{/each}}
+    </table>
 </template>
