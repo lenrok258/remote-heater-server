@@ -1,8 +1,5 @@
 import './heater-switch.html'
-import {
-    HeaterSwitch
-} from '../api/heater-switch.js'
-import 'meteor/momentjs:moment'
+import { HeaterSwitch } from '../api/heater-switch.js'
 
 Template.body.onCreated(function bodyOnCreated() {
     this.state = new ReactiveDict();
@@ -27,7 +24,9 @@ Template.heaterSwitch.events({
 
 Template.heaterSwitch.helpers({
     currentSwitch() {
-        return HeaterSwitch.find({}).fetch()[0];
+        return HeaterSwitch.find({}, {
+            limit: 1
+        }).fetch()[0];
     },
 
     lastSwitches() {
